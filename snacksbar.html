@@ -1,0 +1,30 @@
+<head>
+  <title>snacksbar</title>
+</head>
+
+<body>
+  <h1>Todays Menu</h1>
+
+  <div>
+  	<form class="add_menu">
+  		<input type="text" name="menu_name" placeholder="Item Name" />
+  		<input type="text" name="menu_value" placeholder="Item Value" />  	
+  		<input type="submit" value="Save">	
+  	</form>
+  </div>
+
+  <div>
+  	<ul>
+		{{#each menuItems}}
+			{{>menu_item}}			
+		{{/each}}
+	</ul>
+  </div>
+</body>
+
+<template name="menu_item">
+	<li>
+		<input type="checkbox" name="selected_item" value="{{value}}">
+		{{name}}
+	</li>
+</template>
