@@ -1,0 +1,18 @@
+<template name="ApplicationLayout">
+
+	<header>
+		<h1>Snacksbar</h1>
+	</header>
+
+	<div>
+		{{> yield}}
+	</div>
+
+	<div>
+		{{> yield "menu_item"}}
+	</div>
+
+	<div>
+		{{> yield "footer"}}
+	</div>
+</template>

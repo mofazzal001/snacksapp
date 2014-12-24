@@ -1,0 +1,40 @@
+<template name="InsertMenu">
+	{{#if accountGoogle}}
+		{{>loginButtons}}
+	{{/if}}
+	{{#if loggedIn}}
+		{{>WSLogout}}
+	{{/if}}
+	<h1>Add Menu Item</h1>
+	<div>
+	  	<form class="add_menu">
+	  		<input type="text" name="menu_name" placeholder="Item Name" />
+	  		<input type="text" name="menu_value" placeholder="Item Value" />  	
+	  		<input type="submit" value="Save">	
+	  	</form>
+  	</div>
+</template>
+
+<template name="Footer">
+	<div>Copyright Widespace Bangladesh</div>
+</template>
+
+
+
+<template name="RenderMenuItem">
+	<div>
+  		<ul>
+			{{#each menuItems}}
+				{{>menu_item}}			
+			{{/each}}
+		</ul>
+  	</div>
+</template>
+
+<template name="menu_item">
+	<li>
+		<input type="checkbox" name="selected_item" value="{{value}}">
+		{{name}}
+	</li>
+</template>
+
